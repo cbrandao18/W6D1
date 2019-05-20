@@ -34,7 +34,7 @@ class GoalsController < ApplicationController
 
     def update
         @goal = Goal.find(params[:id])
-        if @goal.update_attributes(goal_params)
+        if @goal.update(goal_params)
             flash[:notice] = "Your goal was updated"
             redirect_to goal_url(@goal)
         else

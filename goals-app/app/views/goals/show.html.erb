@@ -1,0 +1,24 @@
+<h2> Title 
+    <%= @goal.title %>
+</h2>
+
+<p> Body 
+    <%= @goal.body %>
+</p>
+
+<p> Created by
+    <%= @goal.user.username%>
+</p>
+
+<p> Completed?
+    <%= @goal.completed %>
+</p>
+
+<p> Private?
+    <%= @goal.public %>
+</p>
+
+<form action="<%= edit_goal_url(@goal) %>">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="submit" value="Update Goal">
+</form>
